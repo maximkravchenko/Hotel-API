@@ -1,0 +1,326 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-initial-data
+      author: maxim
+      changes:
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name,        value: "DoubleTree by Hilton Minsk" }
+              - column: { name: description, value: "Отличный отель с видом на город с 20-го этажа, 193 номера" }
+              - column: { name: brand,       value: "Hilton" }
+              - column: { name: house_number,valueNumeric: 9 }
+              - column: { name: street,      value: "Pobediteley Avenue" }
+              - column: { name: city,        value: "Minsk" }
+              - column: { name: country,     value: "Belarus" }
+              - column: { name: post_code,   value: "220004" }
+              - column: { name: phone,       value: "+375 17 309-80-00" }
+              - column: { name: email,       value: "doubletreeminsk.info@hilton.com" }
+              - column: { name: check_in,    value: "14:00" }
+              - column: { name: check_out,   value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Marriott Moscow Tverskaya" }
+              - column: { name: description, value: "Современный отель в самом центре Москвы" }
+              - column: { name: brand, value: "Marriott" }
+              - column: { name: house_number, valueNumeric: 10 }
+              - column: { name: street, value: "Tverskaya Street" }
+              - column: { name: city, value: "Moscow" }
+              - column: { name: country, value: "Russia" }
+              - column: { name: post_code, value: "125009" }
+              - column: { name: phone, value: "+7 495 935-55-55" }
+              - column: { name: email, value: "moscow.tverskaya@marriott.com" }
+              - column: { name: check_in, value: "15:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Ibis Minsk" }
+              - column: { name: description, value: "Недорогой и удобный отель недалеко от центра" }
+              - column: { name: brand, value: "Ibis" }
+              - column: { name: house_number, valueNumeric: 5 }
+              - column: { name: street, value: "Lenina Street" }
+              - column: { name: city, value: "Minsk" }
+              - column: { name: country, value: "Belarus" }
+              - column: { name: post_code, value: "220030" }
+              - column: { name: phone, value: "+375 17 218-88-99" }
+              - column: { name: email, value: "ibis.minsk@accor.com" }
+              - column: { name: check_in, value: "14:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Holiday Inn Moscow Lesnaya" }
+              - column: { name: description, value: "Бизнес-отель рядом с Белорусским вокзалом" }
+              - column: { name: brand, value: "Holiday Inn" }
+              - column: { name: house_number, valueNumeric: 15 }
+              - column: { name: street, value: "Lesnaya Street" }
+              - column: { name: city, value: "Moscow" }
+              - column: { name: country, value: "Russia" }
+              - column: { name: post_code, value: "125047" }
+              - column: { name: phone, value: "+7 495 783-65-00" }
+              - column: { name: email, value: "info@holidayinn-lesnaya.ru" }
+              - column: { name: check_in, value: "14:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Hampton by Hilton Mogilev" }
+              - column: { name: description, value: "Уютный отель для деловых и туристических поездок" }
+              - column: { name: brand, value: "Hilton" }
+              - column: { name: house_number, valueNumeric: 22 }
+              - column: { name: street, value: "Pervomayskaya Street" }
+              - column: { name: city, value: "Mogilev" }
+              - column: { name: country, value: "Belarus" }
+              - column: { name: post_code, value: "212030" }
+              - column: { name: phone, value: "+375 222 77-12-34" }
+              - column: { name: email, value: "hampton.mogilev@hilton.com" }
+              - column: { name: check_in, value: "14:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Radisson Blu Hotel Minsk" }
+              - column: { name: description, value: "Современный отель высокого уровня в центре" }
+              - column: { name: brand, value: "Radisson" }
+              - column: { name: house_number, valueNumeric: 18 }
+              - column: { name: street, value: "Kirova Street" }
+              - column: { name: city, value: "Minsk" }
+              - column: { name: country, value: "Belarus" }
+              - column: { name: post_code, value: "220030" }
+              - column: { name: phone, value: "+375 17 229-31-31" }
+              - column: { name: email, value: "info.radissonminsk@radissonhotels.com" }
+              - column: { name: check_in, value: "15:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Courtyard by Marriott Warsaw Airport" }
+              - column: { name: description, value: "Удобно для транзитных пассажиров и командировок" }
+              - column: { name: brand, value: "Marriott" }
+              - column: { name: house_number, valueNumeric: 1 }
+              - column: { name: street, value: "Żwirki i Wigury" }
+              - column: { name: city, value: "Warsaw" }
+              - column: { name: country, value: "Poland" }
+              - column: { name: post_code, value: "00-906" }
+              - column: { name: phone, value: "+48 22 650 10 00" }
+              - column: { name: email, value: "warsawairport@courtyard.com" }
+              - column: { name: check_in, value: "15:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Ibis Styles Moscow Center" }
+              - column: { name: description, value: "Яркий и недорогой отель в центре" }
+              - column: { name: brand, value: "Ibis" }
+              - column: { name: house_number, valueNumeric: 8 }
+              - column: { name: street, value: "Tsvetnoy Boulevard" }
+              - column: { name: city, value: "Moscow" }
+              - column: { name: country, value: "Russia" }
+              - column: { name: post_code, value: "127051" }
+              - column: { name: phone, value: "+7 495 120-00-99" }
+              - column: { name: email, value: "all.accor.com" }
+              - column: { name: check_in, value: "14:00" }
+              - column: { name: check_out, value: "12:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Hostel Trinity Minsk" }
+              - column: { name: description, value: "Бюджетный хостел в самом сердце города" }
+              - column: { name: brand, value: "Hostel" }
+              - column: { name: house_number, valueNumeric: 7 }
+              - column: { name: street, value: "Revolutsionnaya Street" }
+              - column: { name: city, value: "Minsk" }
+              - column: { name: country, value: "Belarus" }
+              - column: { name: post_code, value: "220030" }
+              - column: { name: phone, value: "+375 29 555-22-11" }
+              - column: { name: email, value: "trinity.hostel@gmail.com" }
+              - column: { name: check_in, value: "13:00" }
+              - column: { name: check_out, value: "11:00" }
+
+        - insert:
+            tableName: hotel
+            columns:
+              - column: { name: name, value: "Hilton Garden Inn Warsaw" }
+              - column: { name: description, value: "Надёжный отель сети Hilton в деловом районе" }
+              - column: { name: brand, value: "Hilton" }
+              - column: { name: house_number, valueNumeric: 42 }
+              - column: { name: street, value: "Grzybowska Street" }
+              - column: { name: city, value: "Warsaw" }
+              - column: { name: country, value: "Poland" }
+              - column: { name: post_code, value: "00-844" }
+              - column: { name: phone, value: "+48 22 310 10 00" }
+              - column: { name: email, value: "warsaw@hgi.com" }
+              - column: { name: check_in, value: "15:00" }
+              - column: { name: check_out, value: "12:00" }
+
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Free WiFi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Бесплатная парковка"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Фитнес-центр"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Бесплатный Wi-Fi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Бизнес-центр"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: "Wi-Fi бесплатно"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: "Free WiFi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: "Обслуживание в номере"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: "Бесплатная парковка"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 6
+              - column:
+                  name: name
+                  value: "Бесплатный Wi-Fi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 6
+              - column:
+                  name: name
+                  value: "Фитнес-центр и сауна"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 7
+              - column:
+                  name: name
+                  value: "Бизнес-центр"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 8
+              - column:
+                  name: name
+                  value: "Бесплатный Wi-Fi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 9
+              - column:
+                  name: name
+                  value: "Wi-Fi бесплатно"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 10
+              - column:
+                  name: name
+                  value: "Бесплатный Wi-Fi"
+
+        - insert:
+            tableName: amenity
+            columns:
+              - column:
+                  name: hotel_id
+                  valueNumeric: 10
+              - column:
+                  name: name
+                  value: "Конференц-залы"
