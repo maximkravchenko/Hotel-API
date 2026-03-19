@@ -6,6 +6,8 @@ import org.mxs.hotelapi.dto.response.HotelDetailDTO;
 import org.mxs.hotelapi.dto.response.HotelShortDTO;
 import org.mxs.hotelapi.entity.Amenity;
 import org.mxs.hotelapi.entity.Hotel;
+import org.mxs.hotelapi.exception.HotelNotFoundException;
+import org.mxs.hotelapi.exception.InvalidHistogramParamException;
 import org.mxs.hotelapi.mapping.HotelMapper;
 import org.mxs.hotelapi.repository.AmenityRepository;
 import org.mxs.hotelapi.repository.HotelRepository;
@@ -34,7 +36,7 @@ public class HotelServiceImpl implements HotelService{
     @Override
     public HotelDetailDTO getHotelById(Long id) {
         Hotel hotel = hotelRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Hotel not found with id: " + id));
+                .orElseThrow(() -> new HotelNotFoundException(id));
         return hotelMapper.toDetailDTO(hotel);
     }
 
@@ -66,7 +68,7 @@ public class HotelServiceImpl implements HotelService{
     @Override
     public HotelDetailDTO addAmenities(Long hotelId, List<String> amenities) {
         Hotel hotel = hotelRepository.findById(hotelId)
-                .orElseThrow(() -> new RuntimeException("Hotel not found with id: " + hotelId));
+                .orElseThrow(() -> new HotelNotFoundException(hotelId));
 
         List<Amenity> newAmenities = amenities.stream()
                 .map(name -> {
@@ -98,7 +100,7 @@ public class HotelServiceImpl implements HotelService{
             case "amenities" -> hotels.stream()
                     .flatMap(h -> h.getAmenities().stream())
                     .collect(Collectors.groupingBy(Amenity::getName, Collectors.counting()));
-            default -> throw new RuntimeException("Unknown histogram param: " + param);
+            default -> throw new InvalidHistogramParamException(param);
         };
     }
 }
