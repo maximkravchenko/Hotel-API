@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mxs.hotelapi.dto.response.HotelShortDTO;
 import org.mxs.hotelapi.entity.Amenity;
 import org.mxs.hotelapi.entity.Hotel;
+import org.mxs.hotelapi.exception.InvalidHistogramParamException;
 import org.mxs.hotelapi.mapping.HotelMapper;
 import org.mxs.hotelapi.repository.AmenityRepository;
 import org.mxs.hotelapi.repository.HotelRepository;
@@ -115,6 +116,14 @@ class HotelServiceImplTest {
         assertThat(result).hasSize(2);
     }
 
+    @Test
+    void getHistogram_shouldThrowOnUnknownParam() {
+        when(hotelRepository.findAll()).thenReturn(List.of());
+
+        assertThatThrownBy(() -> service.getHistogram("unknown"))
+                .isInstanceOf(InvalidHistogramParamException.class)
+                .hasMessageContaining("unknown");
+    }
 
     private Amenity amenity(String name) {
         Amenity a = new Amenity();

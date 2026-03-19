@@ -1,5 +1,7 @@
 package org.mxs.hotelapi.dto.request;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -18,9 +20,11 @@ public class HotelCreateDTO {
     @NotBlank
     private String brand;
 
+    @Valid
     @NotNull
     private AddressRequest address;
 
+    @Valid
     @NotNull
     private ContactsRequest contacts;
 
@@ -47,6 +51,7 @@ public class HotelCreateDTO {
         @NotBlank
         private String phone;
         @NotBlank
+        @Email
         private String email;
     }
 
